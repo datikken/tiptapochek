@@ -1,7 +1,7 @@
 import { Server } from "@hocuspocus/server";
 import { Database } from '@hocuspocus/extension-database';
 import { TiptapTransformer } from "@hocuspocus/transformer";
-import * as Y from "yjs";
+import {JSDOM} from "jsdom";
 
 // Configure the server …
 const server = new Server({
@@ -11,7 +11,6 @@ const server = new Server({
         // In this example we use the TiptapTransformer to get JSON from the given
         // ydoc.
         const prosemirrorJSON = TiptapTransformer.fromYdoc(data.document);
-
         console.log(JSON.stringify(prosemirrorJSON))
     },
     extensions: [
