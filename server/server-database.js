@@ -15,15 +15,15 @@ const server = new Server({
     },
     extensions: [
         new Database({
-            fetch: async ({ documentName }) => {
+            fetch: async (data) => {
                 // Load document from your database
                 return null; // Return stored Yjs update or null for new documents
             },
-            store: async ({ documentName, state }) => {
+            store: async (data) => {
+                // console.log(data)
             },
         }),
     ],
 });
 
-// … and run it!
 server.listen();
