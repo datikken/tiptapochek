@@ -1,0 +1,28 @@
+{
+  "name": "clean-server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsup src/index.ts --watch --onSuccess 'node dist/index.js'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@types/ws": "^8.18.1",
+    "http": "^0.0.1-security",
+    "kleur": "^4.1.5",
+    "lib0": "^0.2.108",
+    "tsup": "^8.5.0",
+    "url": "^0.11.4",
+    "uuid": "^11.1.0",
+    "ws": "^8.18.2",
+    "y-protocols": "^1.0.6"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.30",
+    "typescript": "^5.8.3"
+  }
+}
