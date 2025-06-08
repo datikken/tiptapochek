@@ -3,6 +3,7 @@ import { TiptapTransformer } from "@hocuspocus/transformer";
 import { Redis } from "@hocuspocus/extension-redis";
 import process from "node:process";
 import {config} from "dotenv";
+import {Database} from "@hocuspocus/extension-database";
 
 config();
 
@@ -32,6 +33,16 @@ const server = new Server({
         console.log(JSON.stringify(prosemirrorJSON))
     },
     extensions: [
+        new Database({
+            fetch: async (data) => {
+                // Load document from your database
+                return null; // Return stored Yjs update or null for new documents
+            },
+            store: async (data) => {
+                // console.log(data)
+            },
+        }),
+        // The Redis extension does not persist data; it only syncs data between instances. Use the Database extension to store your documents.
         new Redis({
             nodes,
             prefix: keyPrefix,
